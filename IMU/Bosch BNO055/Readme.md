@@ -15,7 +15,7 @@ sudo apt-get install cmake-curses-gui
 ```
 Then get RTIMULib.
 ```
-git clone https://github.com/jetsonhacks/RTIMULib.git
+git clone https://github.com/mrbichel/RTIMULib.git
 ```
 By default, I2C devices are owned by root. To change this, create a file /etc/udev/rules.d/90-i2c.rules and add the line:
 ```
@@ -53,12 +53,12 @@ Setup rtimulib next. “catkin_ws” is the example workspace name and should be
 ```
 cd ~/catkin_ws/src
 source devel/setup.bash
-git clone https://github.com/jetsonhacks/rtimulib_ros.git
+git clone https://github.com/romainreignier/rtimulib_ros.git 
 ```
 To recreate the demonstration, the ROS Topic needs to be “imu”. In the source file, it is listed as “imu/data”. The Topic name is probably related to the consumer viewing the Topic, you may need to change this appropriately later. For now, we’ll just get this working for the demo.
 ```
 cd rtimulib_ros/src
-$ gedit rtimulib_ros.cpp
+gedit rtimulib_ros.cpp
 ```
 Change the line:
 ```
@@ -67,15 +67,15 @@ ros::Publisher imu_pub = n.advertise(“imu”, 1);
 ```
 Then build the node:
 ```
-$ cd ..
-$ cd ..
-$ catkin_make
+cd ..
+cd ..
+catkin_make
 ```
 For the demo, install the IMU visualizer:
 ```
-$ sudo apt-get install ros-melodic-razor-imu-9dof
-$ sudo apt-get install python-visual
-$ sudo apt-get install python-wxtools
+sudo apt-get install ros-kinetic-razor-imu-9dof
+sudo apt-get install python-visual
+sudo apt-get install python-wxtools
 ```
 ## Installing the Bosch IMU
 There are several ways to connect the Inertial Measurement Unit (IMU) to the Jetson TK1 Development Kit. Here’s a demonstration of a very simple way. The IMU is not the Bosch, but is very similar and the installation method is the same. Looky here: https://www.youtube.com/watch?v=6SdbInw2ErY. Solder the supplied header pins onto the IMU breakout board, then wire the IMU header pins to the Jetson J3A1 connector as follows:
@@ -106,3 +106,8 @@ At this point, you should be up and running and you should be receiving data fro
 
 ## Conclusion
 The Bosch BNO055 is a good choice for many applications where the host system does not want to bother with having to generate the IMU sensor fusion data. The Bosch is straightforward to use, and does not require the calibration gymnastics that most other IMUs require.
+## Source
+1. https://www.jetsonhacks.com/2015/04/22/inertial-measurement-unit-imu-part-i/
+2. https://www.jetsonhacks.com/2015/04/23/inertial-measurement-unit-imu-part-ii/
+3. https://www.jetsonhacks.com/2015/04/28/inertial-measurement-unit-imu-part-iii/
+4. https://www.jetsonhacks.com/2015/07/01/bosch-imu-under-ros-on-nvidia-jetson-tk1/
