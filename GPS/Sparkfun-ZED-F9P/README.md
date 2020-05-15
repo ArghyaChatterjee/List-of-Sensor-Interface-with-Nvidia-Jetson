@@ -40,3 +40,4 @@ Distributed as-is; no warranty is given.
 - Your friends at SparkFun.
 ## Source
 1. https://github.com/sparkfun/Qwiic_GPS-RTK2
+2. https://github.com/sparkfun/SparkFun_Ublox_Arduino_Library
