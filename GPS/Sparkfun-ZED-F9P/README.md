@@ -38,3 +38,5 @@ Please use, reuse, and modify these files as you see fit. Please maintain attrib
 Distributed as-is; no warranty is given.
 
 - Your friends at SparkFun.
+## Source
+1. https://github.com/sparkfun/Qwiic_GPS-RTK2
