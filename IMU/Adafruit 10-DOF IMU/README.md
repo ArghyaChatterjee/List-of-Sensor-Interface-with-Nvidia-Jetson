@@ -50,3 +50,8 @@ There are several ways to actually connect the headers to the Jetson J3A1 connec
 For the demo, I used Adafruit Premium Female/Female Jumper Wires – 40×6″ and 20 CM Machine Pin Wire Kit/10 Pack. This approach may be adequate for some projects, but for more rugged projects you may want to consider actually soldering wires to the header pins approach or making a breakout board for the Jetsons’ J3A1 header. Remember that the J3A1 header is 2mm pitch (0.08″) which is slightly smaller than the more standard DIY 2.54mm pitch that something like an Arduino uses. You’ll also want to physically mount the device some where also, fortunately there are mounting holes for that purpose on the breakout board.
 
 Once you have the IMU connected to the Jetson, you’re ready to calibrate.
+## Source
+1. https://www.jetsonhacks.com/2015/04/22/inertial-measurement-unit-imu-part-i/
+2. https://www.jetsonhacks.com/2015/04/23/inertial-measurement-unit-imu-part-ii/
+3. https://www.jetsonhacks.com/2015/04/28/inertial-measurement-unit-imu-part-iii/
+4. https://github.com/mrbichel/RTIMULib
