@@ -107,9 +107,6 @@ At this point, you should be up and running and you should be receiving data fro
 ## Conclusion
 The Bosch BNO055 is a good choice for many applications where the host system does not want to bother with having to generate the IMU sensor fusion data. The Bosch is straightforward to use, and does not require the calibration gymnastics that most other IMUs require.
 ## Source
-1. https://www.jetsonhacks.com/2015/04/22/inertial-measurement-unit-imu-part-i/
-2. https://www.jetsonhacks.com/2015/04/23/inertial-measurement-unit-imu-part-ii/
-3. https://www.jetsonhacks.com/2015/04/28/inertial-measurement-unit-imu-part-iii/
-4. https://www.jetsonhacks.com/2015/07/01/bosch-imu-under-ros-on-nvidia-jetson-tk1/
-5. https://github.com/mrbichel/RTIMULib
-6. https://github.com/romainreignier/rtimulib_ros 
+1. https://www.jetsonhacks.com/2015/07/01/bosch-imu-under-ros-on-nvidia-jetson-tk1/
+2. https://github.com/mrbichel/RTIMULib
+3. https://github.com/romainreignier/rtimulib_ros 
