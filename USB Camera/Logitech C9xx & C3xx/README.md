@@ -39,7 +39,7 @@ By default, '/dev/video0' is the default webcam for laptops. So, different brand
 /dev/video0  /dev/video1  /dev/video2  /dev/video3
 ```
 You can delete multiple camera objetcs if you want in order to prevent yourself from being confused but if you don't want, you have to manually edit the launch file 'usb_cam-test.launch' inside 'usb_cam' package & change between choices of input devices '/dev/video1' or '/dev/video2' or '/dev/video3' to get the current camera stream from your usb webcam.    
-## Visual Inspection of USB-Webcam on Ubuntu 18.04:
+## Visual testing USB-Webcam on Ubuntu 18.04:
 If our webcam has support in Ubuntu, we can visually inspect by opening the video device using a tool called 'Cheese'. Cheese is simply a webcam viewer. Enter the command 'cheese' in the Terminal. If it is not installed, you can install it using the following command:
 ```
 sudo apt-get install cheese
