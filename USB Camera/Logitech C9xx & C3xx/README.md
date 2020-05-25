@@ -1,4 +1,4 @@
-## Download & Install Basic Tools :
+## Download & Install Basic prerequisites :
 You need to have ROS installed with a 'catkin_ws' directory created already. Clone the 'usb_cam' package into the 'src' directory inside 'catkin_ws':
 ```
 cd ~/catkin_ws/src/
@@ -13,7 +13,7 @@ After building the package, install the v4l-util Ubuntu package. It is a collect
 ```
 sudo apt-get install v4l-utils
 ```
-Now, copy the camera_info directory from ~/catkin_ws/src/usb-cam & paste to ~/.ros directory at your 'Home' directory. You can see by default a 'head_camera.yaml' file (camera calibration file) inside camera_info directory for logitech C930e opening at 640x480 resolution. This is needed when using usb_cam package. In actual case, you have to manually calibrate your camera to generate this file (which is brand & resolution specific). 
+Now, copy the camera_info directory from ~/catkin_ws/src/usb-cam & paste to ~/.ros directory at your 'Home' directory. You can see by default a 'head_camera.yaml' file (camera calibration file) inside camera_info directory for Logitech C930e opening at 640x480 resolution. This is needed when using usb_cam package. In actual case, you have to manually calibrate your camera to generate this file (which is brand & resolution specific). 
 ## Note: 
 The camera brands used here are Logitech C310 & C930e. 'Calibration file' is camera brand as well as resolution specific. The calibration files for 2 camera brands & corresponding resolution has been included inside 'usb_cam' package of this repo. You can just rename one of the files to 'head_camera.yaml' & paste it inside ~/.ros/camera_info directory.  
 ## Configuring USB-Webcam on Ubuntu 18.04:
