@@ -3,7 +3,7 @@ You need to have ROS installed with a 'catkin_ws' directory created already. Clo
 ```
 cd ~/catkin_ws/src/
 git clone https://github.com/ArghyaChatterjee/Sensor-Interface-with-Nvidia-Jetson.git
-###if you want to download the package from original repo in which it was created, then###
+###Only if you want to download the package from original repo in which it was created, then###
 git clone https://github.com/bosch-ros-pkg/usb_cam.git
 ```
 Build the workspace using catkin_make:
