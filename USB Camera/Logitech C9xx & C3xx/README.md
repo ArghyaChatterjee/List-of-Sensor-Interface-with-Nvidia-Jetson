@@ -2,7 +2,9 @@
 You need to have ROS installed with a 'catkin_ws' directory created already. Clone the 'usb_cam' package into the 'src' directory inside 'catkin_ws':
 ```
 cd ~/catkin_ws/src/
-git clone https://github.com/bosch-ros-pkg/usb_cam.git
+git clone https://github.com/ArghyaChatterjee/Sensor-Interface-with-Nvidia-Jetson.git
+#if you want to download the package from original repo in which it was created, then
+git clone https://github.com/bosch-ros-pkg/usb_cam.git#
 ```
 Build the workspace using catkin_make:
 ```
@@ -57,4 +59,6 @@ If everything works fine, you will get the image stream and logs in the Terminal
 Just to remind you of the fact that the camera will open by default with 640x480 resolution. If you want the camera to open at different resolution than the one mentioned here (i.e 1280x720 or 1920x1080), just navigate to the 'usb_cam-test.launch' file inside 'usb_cam' package  & change the resolution accordingly. 2 things to remember during the change:
 1. Every USB cam supports discrete set of resolutions & not any arbitary number. Please see which discrete set of resolutions they support in corresponding brands documents. ( like C310 supports 640x480 & 1280x720 where as C930e supports 640x480, 1280x720 & 1920x1080)
 2. If the resolution during opening a camera changed, the camera calibration file (head_camera.yaml) inside ~/.ros/camera_info directory should be changed accordingly.
-
+ ## Source:
+ 1. https://github.com/bosch-ros-pkg/usb_cam
+ 2. http://wiki.ros.org/usb_cam
