@@ -1,33 +1,14 @@
-Here’s a little series on integrating an Inertial Measurement Unit (IMU) onto the I2C GPIO pins of the NVIDIA Jetson TK1. First, we’ll build an interface library, RTIMULib, to enable the IMU to talk to the Jetson. Look here: https://www.youtube.com/watch?v=gDewXVN5a-o. 
 ## Background
-As a child of the space age, I was always fascinated with rockets and the hardware built for going to the moon. It didn’t help that my father was a rocket scientist, which next to being an astronaut at the time was probably the coolest job in the world. My father put it into perspective when he told me, “You can teach a chimpanzee to be an astronaut, but you can’t train one to be a rocket scientist”. Or at least that’s how I remember it. This made me a little uneasy. Apparently I wanted to grow up to be a chimpanzee so I could ride rockets into space. I’m not sure how the guidance counselors would take that.
 
-One of the fascinating bits of rocket hardware is the Intertial Measurement Unit, which is, as Wikipedia describes it:
-
+A little series on integrating an Inertial Measurement Unit (IMU) onto the I2C GPIO pins of the NVIDIA Jetson TK1. First, we’ll build an interface library, RTIMULib, to enable the IMU to talk to the Jetson. Look here: https://www.youtube.com/watch?v=gDewXVN5a-o. 
 An inertial measurement unit (IMU) is an electronic device that measures and reports a craft’s velocity, orientation, and gravitational forces, using a combination of accelerometers and gyroscopes, sometimes also magnetometers.
-
-Full Wikipedia article here.
-
-
 The Inertial measurement unit and the optical system (scanning telescope and sextant) mounted on the precision navigation base which maintains accurate angular orientation between the two subsystems. The optical system is used to align the inertial system and for navigation in earth oribt, lunar orbit, and in cislunar space. The inertial measurement unit is used as a primary attitude reference and is used for guidance purposes during all maneuvers and during reentry.
-The Inertial measurement unit and the optical system (scanning telescope and sextant) mounted on the precision navigation base which maintains accurate angular orientation between the two subsystems. The optical system is used to align the inertial system and for navigation in earth oribt, lunar orbit, and in cislunar space. The inertial measurement unit is used as a primary attitude reference and is used for guidance purposes during all maneuvers and during reentry.
-Here’s some more background on the Apollo Navigation and Guidance Systems.
 
-Considering that the IMU structure is inside of a 6 inch cube of beryllium, you know it’s a formidable piece of hardware. What child wouldn’t be interested in that kind of thing? A lot of children were given gyroscopes to play with and learn, but it didn’t seem the same.
-
-Forward about half a century. Today, most people carry an IMU with them in their pocket or purse in the form of a smartphone. This is the best thing ever!
-
-## IMU and the Jetson TK1
-Unfortunately the Jetson does not have a built in IMU, but that’s easy to rectify. First we need an appropriate IMU. There are all sorts, but ideally it would have 10 Degrees Of Freedom (DOF), that is, accelerometer, magnetometer, and gyroscope, along with a barometer pressure sensor. 10 DOF is a bit of a misnomer, but a cool name nonetheless. A lot of these devices are made for I2C (serial computer bus) communication with a computer. Fortunately, the Jetson has that sort of access. It would also be nice if the IMU has level shifting, so that we don’t have to worry too much about voltages and the such.
-
-Here’s one that fits the bill. The Adafruit 10-DOF IMU Breakout is about the size of an American quarter, and costs about $30 USD. Go read up about it, I know your curious. Now it doesn’t have a beryllium box, but it does have some header pins. And the header pins are gold (plated, maybe)! A future article will cover how to connect the IMU to the Jetson.
-
-Before we can get data out of the IMU, we’ll have to build and install some software. For the initial foray, we’ll use the excellent Richards-Tech IMU library for Linux embedded systems, RTIMULib which is available on Github. Here’s the Richards-Tech blog notes on the library.
-
+## IMU with Jetson TK1
+Unfortunately the Jetson does not have a built in IMU, but that’s easy to rectify. First we need an appropriate IMU. There are all sorts, but ideally it would have 10 Degrees Of Freedom (DOF), that is, accelerometer, magnetometer, and gyroscope, along with a barometer pressure sensor. 10 DOF is a bit of a misnomer, but a cool name nonetheless. A lot of these devices are made for I2C (serial computer bus) communication with a computer. Fortunately, the Jetson has that sort of access. It would also be nice if the IMU has level shifting, so that we don’t have to worry too much about voltages and such. Before we can get data out of the IMU, we’ll have to build and install some software. 
+ 
 ## Installation
-For the video, I forked the RTIMULib into the JetsonHacks repository. I suggest you use the Richards-Tech repository if you have long term projects that need the library, as it is well maintained there and updated frequently.
-
-All you have to do is clone the appropriate repository, i.e. :
+I suggest you use the Richards-Tech repository if you have long term projects that need the library, as it is well maintained there and updated frequently. All you have to do is clone the appropriate repository, i.e. :
 ```
 git clone https:://github.com/jetsonhacks/RTIMULib.git
 ```
@@ -68,5 +49,4 @@ There are several ways to actually connect the headers to the Jetson J3A1 connec
 
 For the demo, I used Adafruit Premium Female/Female Jumper Wires – 40×6″ and 20 CM Machine Pin Wire Kit/10 Pack. This approach may be adequate for some projects, but for more rugged projects you may want to consider actually soldering wires to the header pins approach or making a breakout board for the Jetsons’ J3A1 header. Remember that the J3A1 header is 2mm pitch (0.08″) which is slightly smaller than the more standard DIY 2.54mm pitch that something like an Arduino uses. You’ll also want to physically mount the device some where also, fortunately there are mounting holes for that purpose on the breakout board.
 
-Once you have the IMU connected to the Jetson, you’re ready to calibrate. Go over to Intertial Measurement Unit (IMU) – Part II to get a feel for how that is done.
-
+Once you have the IMU connected to the Jetson, you’re ready to calibrate.
