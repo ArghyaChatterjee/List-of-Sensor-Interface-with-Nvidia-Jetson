@@ -1,4 +1,5 @@
-image_width: 640
+##camera calibration file for logitech C930e with resolution 640x480##
+image_width: 640                        
 image_height: 480
 camera_name: head_camera
 camera_matrix:
