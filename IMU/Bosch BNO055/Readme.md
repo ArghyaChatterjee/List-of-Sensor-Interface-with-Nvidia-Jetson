@@ -78,7 +78,7 @@ sudo apt-get install python-visual
 sudo apt-get install python-wxtools
 ```
 ## Installing the Bosch IMU
-There are several ways to connect the Inertial Measurement Unit (IMU) to the Jetson TK1 Development Kit. Here’s a demonstration of a very simple way. The IMU is not the Bosch, but is very similar and the installation method is the same. Looky here: https://www.youtube.com/watch?v=6SdbInw2ErY. Solder the supplied header pins onto the IMU breakout board, then wire the IMU header pins to the Jetson J3A1 connector as follows:
+There are several ways to connect the Inertial Measurement Unit (IMU) to the Jetson TK1 Development Kit. Here’s a demonstration of a very simple way. The IMU is not the Bosch, but is very similar and the installation method is the same. Look here: https://www.youtube.com/watch?v=6SdbInw2ErY. Solder the supplied header pins onto the IMU breakout board, then wire the IMU header pins to the Jetson J3A1 connector as follows:
 ```
 GND J3A1-14 (-)
 Vin J3A1-16 (+)
