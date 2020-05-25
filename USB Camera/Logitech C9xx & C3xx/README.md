@@ -23,17 +23,28 @@ dmesg
 ```
 If your camera is detected in Linux, it may give you logs like this: 
 ```
+[ 1298.805115] usb 1-1: new high-speed USB device number 6 using xhci_hcd
 [ 1298.805115] usb 1-1: New USB device found, idVendor=046d, idProduct=0843, bcdDevice= 0.13
 [ 1298.805120] usb 1-1: New USB device strings: Mfr=0, Product=2, SerialNumber=1
 [ 1298.805123] usb 1-1: Product: Logitech Webcam C930e
 [ 1298.805127] usb 1-1: SerialNumber: E0E1D17E
 [ 1298.806245] uvcvideo: Found UVC 1.00 device Logitech Webcam C930e (046d:0843)
 ```
-You can use any webcam that has driver support in Linux. If our webcam has support in Ubuntu, we can open the video device using a tool called 'Cheese'. Cheese is simply a webcam viewer. Enter the command 'cheese' in the Terminal. If it is not installed, you can install it using the following command:
+You can use any webcam that has driver support in Linux. We can also check which usb devices are attached with our PC or laptop with the following command:
+```
+ls /dev/video*
+```
+By default, '/dev/video0' is the default webcam for laptops. So, different brand of cameras create permanent camera objects in the device input directory once connected to the laptop. If your camera is detected, it may give you logs like this:
+```
+/dev/video0  /dev/video1  /dev/video2  /dev/video3
+```
+You can delete multiple camera objetcs if you want in order to prevent yourself from being confused but if you don't want, you have to manually edit the launch file 'usb_cam-test.launch' inside 'usb_cam' package & change between choices of input devices '/dev/video1' or '/dev/video2' or '/dev/video3' to get the current camera stream from your usb webcam.    
+## Visual Inspection of USB-Webcam on Ubuntu 18.04:
+If our webcam has support in Ubuntu, we can visually inspect by opening the video device using a tool called 'Cheese'. Cheese is simply a webcam viewer. Enter the command 'cheese' in the Terminal. If it is not installed, you can install it using the following command:
 ```
 sudo apt-get install cheese
 ```
-If the driver and device are proper, you will get a video stream from the webcam. 
+If the driver and device are proper, you will get a video stream from the webcam. If you have multiple webcams (like in laptop) 'cheese' software will by default choose the webcam to show which has higher resolution.
 ## Interfacing the webcam with ROS:
 Let's test the webcam using the 'usb_cam' package. The following command is used to launch the usb_cam nodes to display images from a webcam and publish ROS image topics at the same time:
 ```
