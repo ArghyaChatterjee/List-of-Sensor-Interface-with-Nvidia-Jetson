@@ -53,4 +53,8 @@ source devel/setup.bash
 roslaunch usb_cam usb_cam-test.launch
 ```
 If everything works fine, you will get the image stream and logs in the Terminal. The image is displayed using the image_view package in ROS, which is subscribed to the topic called /usb_cam/image_raw.
+## Note:
+Just to remind you of the fact that the camera will open by default with 640x480 resolution. If you want the camera to open at different resolution than the one mentioned here (i.e 1280x720 or 1920x1080), just navigate to the 'usb_cam-test.launch' file inside 'usb_cam' package  & change the resolution accordingly. 2 things to remember during the change:
+1. Every USB cam supports discrete set of resolutions & not any arbitary number. Please see which discrete set of resolutions they support in corresponding brands documents. ( like C310 supports 640x480 & 1280x720 where as C930e supports 640x480, 1280x720 & 1920x1080)
+2. If the resolution during opening a camera changed, the camera calibration file (head_camera.yaml) inside ~/.ros/camera_info directory should be changed accordingly.
 
