@@ -1,6 +1,6 @@
 ## Background
 
-A little series on integrating an Inertial Measurement Unit (IMU) onto the I2C GPIO pins of the NVIDIA Jetson TK1. First, we’ll build an interface library, RTIMULib, to enable the IMU to talk to the Jetson. Look here: https://www.youtube.com/watch?v=gDewXVN5a-o. 
+A little series on integrating an Inertial Measurement Unit (IMU) onto the I2C GPIO pins of the NVIDIA Jetson TK1. First, we’ll build an interface library, RTIMULib, to enable the IMU to talk to the Jetson. Look here: https://www.youtube.com/watch?v=gDewXVN5a-o. </br>
 An inertial measurement unit (IMU) is an electronic device that measures and reports a craft’s velocity, orientation, and gravitational forces, using a combination of accelerometers and gyroscopes, sometimes also magnetometers.
 The Inertial measurement unit and the optical system (scanning telescope and sextant) mounted on the precision navigation base which maintains accurate angular orientation between the two subsystems. The optical system is used to align the inertial system and for navigation in earth oribt, lunar orbit, and in cislunar space. The inertial measurement unit is used as a primary attitude reference and is used for guidance purposes during all maneuvers and during reentry.
 
