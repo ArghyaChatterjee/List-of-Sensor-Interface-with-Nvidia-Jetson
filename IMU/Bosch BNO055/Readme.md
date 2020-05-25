@@ -24,16 +24,16 @@ KERNEL==”i2c-[0-7]”,MODE=”0666″
 ```
 As an alternative, you can do this straight from a command line:
 ```
-$ sudo bash -c 'echo KERNEL==\"i2c-[0-7]\",MODE=\"0666\" > /etc/udev/rules.d/90-i2c.rules'
+sudo bash -c 'echo KERNEL==\"i2c-[0-7]\",MODE=\"0666\" > /etc/udev/rules.d/90-i2c.rules'
 ```
 Then prepare for compilation
 ```
-$ cd RTIMULib
+cd RTIMULib
 #Switch to the Linux directory
-$ cd Linux
-$ mkdir build
-$ cd build
-$ cmake ..
+cd Linux
+mkdir build
+cd build
+cmake ..
 ```
 This generates the cmake file. The parameters can now be changed so that Qt is not required:
 ```
@@ -92,15 +92,15 @@ For the demo, I used Adafruit Premium Female/Female Jumper Wires – 40×6″ an
 After installing the software and wiring the IMU to the Jetson, you should be ready to start robotin’.
 ```
 # Open a new terminal
-$ roscore
+roscore
 # Open a new Terminal
-$ cd ~/catkin_ws
-$ source devel/setup.bash
-$ roslaunch rtimulib_ros rtimulib_ros.launch
+cd ~/catkin_ws
+source devel/setup.bash
+roslaunch rtimulib_ros rtimulib_ros.launch
 # Open a new Terminal
-$ cd ~/catkin_ws
-$ source devel/setup.bash
-$ roslaunch razor_imu_9dof razor-display.launch
+cd ~/catkin_ws
+source devel/setup.bash
+roslaunch razor_imu_9dof razor-display.launch
 ```
 At this point, you should be up and running and you should be receiving data from the IMU.
 
