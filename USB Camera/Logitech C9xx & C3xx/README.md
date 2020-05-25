@@ -1,5 +1,5 @@
 ## Download & Install Basic Tools :
-You need to have ROS installed with a 'catkin_ws' directory created already. Clone the 'usb_cam' package into the 'src' directory of 'catkin_ws':
+You need to have ROS installed with a 'catkin_ws' directory created already. Clone the 'usb_cam' package into the 'src' directory inside 'catkin_ws':
 ```
 cd ~/catkin_ws/src/
 git clone https://github.com/bosch-ros-pkg/usb_cam.git
@@ -13,10 +13,10 @@ After building the package, install the v4l-util Ubuntu package. It is a collect
 ```
 sudo apt-get install v4l-utils
 ```
-Now, copy the camera_info directory from ~/catkin_ws/src/usb-cam & paste to ~/.ros directory at your 'Home' directory. You can see by default a 'head_camera.yaml' file (camera calibration file) inside camera_info folder. This is needed when using usb_cam package. 
+Now, copy the camera_info directory from ~/catkin_ws/src/usb-cam & paste to ~/.ros directory at your 'Home' directory. You can see by default a 'head_camera.yaml' file (camera calibration file) inside camera_info directory for logitech C930e opening at 640x480 resolution. This is needed when using usb_cam package. In actual case, you have to manually calibrate your camera to generate this file (which is brand & resolution specific). 
 ## Note: 
-'Calibration file' is camera brand as well as resolution specific. The calibration files for different camera brand & resolution has been included inside 'usb_cam' package of this repo. You can just rename one of the files to 'head_camera.yaml' & paste it inside ~/.ros/camera_info directory.  
-## Configuring webcam on Ubuntu 18.04:
+The camera brands used here are Logitech C310 & C930e. 'Calibration file' is camera brand as well as resolution specific. The calibration files for 2 camera brands & corresponding resolution has been included inside 'usb_cam' package of this repo. You can just rename one of the files to 'head_camera.yaml' & paste it inside ~/.ros/camera_info directory.  
+## Configuring USB-Webcam on Ubuntu 18.04:
 After installing these two, we can connect the webcam to the PC to check whether it is properly detected by our PC. Open a Terminal and execute the dmesg command to check the kernel logs. 
 ```
 dmesg
@@ -45,9 +45,11 @@ If our webcam has support in Ubuntu, we can visually inspect by opening the vide
 sudo apt-get install cheese
 ```
 If the driver and device are proper, you will get a video stream from the webcam. If you have multiple webcams (like in laptop) 'cheese' software will by default choose the webcam to show which has higher resolution.
-## Interfacing the webcam with ROS:
+## Interfacing the USB-Webcam with ROS:
 Let's test the webcam using the 'usb_cam' package. The following command is used to launch the usb_cam nodes to display images from a webcam and publish ROS image topics at the same time:
 ```
+cd ~/catkin_ws
+source devel/setup.bash
 roslaunch usb_cam usb_cam-test.launch
 ```
 If everything works fine, you will get the image stream and logs in the Terminal. The image is displayed using the image_view package in ROS, which is subscribed to the topic called /usb_cam/image_raw.
